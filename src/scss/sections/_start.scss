@@ -1,0 +1,461 @@
+.section {
+  &--start {
+    background: $pink--lighter;
+    height: calc(100vh - #{$header-height});
+    overflow: hidden;
+    perspective: 1000px;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      //padding: 29rem 1.5rem 0;
+      padding: 52vh 1.5rem 0;
+      //height: 55.65rem;
+    }
+  }
+  
+  &--start &__heading {
+    //width: 26rem;
+    max-width: 41vh;
+    position: absolute;
+    z-index: 4;
+    font-size: 7vh;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      max-width: 100%;
+      position: relative;
+      font-size: 8.2vw;
+    }
+    
+    &-1 {
+      //bottom: 10.5rem;
+      bottom: 16.67vh;
+      right: 0;
+      margin-right: 0.75rem;
+    
+      //@media #{$gl-xs} {
+      @media #{$portrait} {
+      bottom: auto;
+        left: 0;
+        right: 0;
+        margin: 0;
+      }
+    }
+    &-2 {
+      //bottom: 20rem;
+      bottom: 31.75vh;
+      left: 0;
+      margin-left: 0.75rem;
+    
+      //@media #{$gl-xs} {
+      @media #{$portrait} {
+        bottom: auto;
+        left: 0;
+        right: 0;
+        margin: 0;
+      }
+    }
+  }
+  
+  &--start &__heading-text {
+    width: 19rem;
+    //@include absolute(top 17rem left 50%);
+    @include absolute(top 22vh left 0);
+    margin-left: 0.75rem;
+    z-index: 4;
+    font-size: 2.8vh;
+    line-height: 1.2;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      position: relative;
+      top: auto;
+      left: auto;
+      margin: 2.5rem auto 0;
+      text-shadow: none;
+      //width: 23.1rem;
+      width: 38vh;
+    }
+  }
+  
+  &--start &__heading-wrapper {
+    @include absolute(top 0);
+    @include size(50%, 100%);
+    overflow: hidden;
+    
+    @media #{$portrait} {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+    
+    &-1 {
+      left: 0;
+    }
+    &-2 {
+      right: 0;
+    }
+  }
+  
+  &--start &__img-shtrih-1 {
+    //@include absolute(bottom 31rem right 50%);
+    @include absolute(bottom 49.21vh right 50%);
+    margin-right: 2.5rem;
+    //@include size(911px, 644px);
+    @include size(calc(90.38vh - #{$header-height}), calc(64vh - #{$header-height}));
+    background: url('../img/pink-shtrih-1.png') center no-repeat;
+    background-size: contain;
+    z-index: 0;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      width: 110%;
+      left: -5%;
+      right: -5%;
+      margin: 0;
+      top: -17.5rem;
+    }
+  }
+  &--start &__img-shtrih-2 {
+    //@include absolute(bottom -23rem left 50%);
+    @include absolute(bottom -36.51vh left 50%);
+    margin-left: 7rem;
+    //@include size(911px, 644px);
+    @include size(calc(90.38vh - #{$header-height}), calc(63.9vh - #{$header-height}));
+    background: url('../img/pink-shtrih-1.png') center no-repeat;
+    background-size: contain;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      bottom: -20rem;
+      left: 2%;
+      margin: 0;
+      z-index: 4;
+    }
+  }
+  &--start &__img-shadow {
+    //@include absolute(top 0 right 50%);
+    @include absolute(top 21vh right 50%);
+    margin-right: 5rem;
+    //@include size(301px, 275px);
+    @include size(29.86vh, 27.28vh);
+    background: url('../img/shadow.png') center no-repeat;
+    background-size: contain;
+    mix-blend-mode: multiply;
+  }
+  &--start &__img-poly-1 {
+    //@include absolute(top 7rem right 50%);
+    //@include size(108px, 117px);
+    @include absolute(top 11.11vh right 50%);
+    margin-right: 23.75rem;
+    @include size(10.71vh, 11.61vh);
+    background: url('../img/poly-1.png') center no-repeat;
+    background-size: contain;
+    z-index: 5;
+  }
+  &--start &__img-poly-2 {
+    //@include absolute(top 10.5rem left 50%);
+    //@include size(97px, 141px);
+    @include absolute(top 16.67vh left 50%);
+    margin-left: 28.125rem;
+    @include size(9.62vh, 13.99vh);
+    background: url('../img/poly-2.png') center no-repeat;
+    background-size: contain;
+    z-index: 5;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      top: 3.5rem;
+      margin-left: -45%;
+    }
+  }
+  &--start &__img-poly-3 {
+    //@include absolute(bottom 12.5rem left 50%);
+    //@include size(145px, 171px);
+    @include absolute(bottom 19.84vh left 50%);
+    margin-left: 22.5rem;
+    @include size(14.38vh, 16.96vh);
+    background: url('../img/poly-3.png') center no-repeat;
+    background-size: contain;
+    z-index: 5;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      top: 19rem;
+      left: auto;
+      right: 1%;
+      margin: 0;
+    }
+  }
+  &--start &__img-ball-1 {
+    //@include absolute(top 25rem right 50%);
+    //@include size(64px, 108px);
+    @include absolute(top 39.68vh right 50%);
+    margin-right: 32rem;
+    @include size(6.35vh, 10.71vh);
+    background: url('../img/ball-1.png') center no-repeat;
+    background-size: contain;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      @include size(10rem, 5rem);
+      border-radius: 5rem 5rem 0 0;
+      top: auto;
+      bottom: 0;
+      margin-right: -5rem;
+      background: $white;
+      z-index: 6;
+      
+      &::before {
+        content: '';
+        display: block;
+        @include absolute(bottom 0.75rem left 50%);
+        margin-left: -1.5rem;
+        @include size(0);
+        @include triangle(1.5rem, bottom, 3rem, #eed6d5);
+      }
+    }
+  }
+  &--start &__img-flower-ball {
+    //@include absolute(bottom -1.25rem left 50%);
+    @include absolute(bottom -1.98vh left 50%);
+    margin-left: 14rem;
+    //@include size(170px, 200px);
+    @include size(16.87vh, 19.84vh);
+    z-index: 6;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      height: 10rem;
+      bottom: 1.5rem;
+      left: auto;
+      right: 0;
+      margin: 0;
+      background: url('../img/ball-2.png') right center no-repeat;
+      background-size: contain;
+    }
+  }
+  &--start &__img-flower {
+    @include absolute(top 0 left 0);
+    //@include size(94px, 200px);
+    @include size(9.33vh, 19.84vh);
+    background: url('../img/flower-1.png') center no-repeat;
+    background-size: contain;
+    
+  }
+  &--start &__img-ball-2 {
+    @include absolute(top 0 right 0);
+    //height: 157px;
+    height: 15.58vh;
+    background: url('../img/ball-2.png') right center no-repeat;
+    background-size: cover;
+    
+    &.back {
+      //width: 76px;
+      width: 7.54vh;
+    }
+    
+    &.front {
+      //width: 81px;
+      width: 8vh;
+      background-position: left center;
+      //left: 0.8rem;
+      left: 1.3vh;
+    }
+  }
+  &--start &__img-girl {
+    @include absolute(bottom 0 right 50%);
+    //@include size(616px, 911px);
+    @include size(calc(62vh - #{$header-height}), calc(86vh - #{$header-height}));
+    overflow: hidden;
+    z-index: 3;
+    transform-origin: right bottom;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      @include size(100%, auto);
+      right: 0;
+      top: 1.5rem;
+      bottom: 0;
+      
+      &::after {
+        content: '';
+        display: block;
+        @include size(7rem, 20rem);
+        @include absolute(left 0 bottom 0);
+        background: linear-gradient(to right, $pink--lighter 0%, transparent 100%);
+      }
+    }
+  }
+  &--start &__img-girl-1 {
+    @include absolute(bottom 0 right 0);
+    @include size(100%);
+    background: url('../img/girl-1.png') left top no-repeat;
+    background-size: cover;
+  }
+  &--start &__img-girl-2 {
+    @include absolute(bottom 0 right 0);
+    @include size(100%);
+    background: url('../img/girl-2.png') left top no-repeat;
+    background-size: cover;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      background-position: top left -5vw;
+      background-size: contain;
+    }
+    @media #{$gl-xs} {
+      background-position: top left -45%;
+      background-size: cover;
+    }
+  }
+  &--start &__img-girl-3 {
+    @include absolute(bottom 0 right 50%);
+    margin-right: -9rem;
+    //@include size(742px, 911px);
+    @include size(68vh, 81vh);
+    background: url('../img/girl-2.png') right top no-repeat;
+    background-size: cover;
+    z-index: 3;
+  }
+  &--start &__img-sky-circle {
+    //@include absolute(top 7.5rem left 50%);
+    @include absolute(top 9vh left 50%);
+    //margin-left: -322px;
+    margin-left: -27vh;
+    //@include size(644px);
+    @include size(calc(66vh - #{$header-height}));
+    z-index: 1;
+    
+    //@media #{$gl-xs} {
+    @media #{$portrait} {
+      top: 1.5rem;
+      @include size(598px);
+      margin-left: -299px;
+    }
+  }
+  &--start &__img-circle {
+    @include absolute(top 0 left 0);
+    @include circle(100%);
+    background: $green;
+  }
+  &--start &__img-sky {
+    @include absolute(top 0 left 0);
+    @include circle(100%);
+    background: url('../img/sky.png') center no-repeat;
+    background-size: cover;
+    animation: bg-scrolling 15s alternate infinite linear;
+  }
+  
+  @media #{$landscape} {
+    // default state
+    &--start &__img-poly-1 {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    &--start &__img-poly-2 {
+      transform: translateX(50%);
+      opacity: 0;
+    }
+    &--start &__img-poly-3 {
+      transform: translateX(25%);
+      opacity: 0;
+    }
+    &--start &__img-ball-1 {
+      opacity: 0;
+    }
+    &--start &__img-flower-ball {
+      transform: translateX(200%);
+    }
+    &--start &__img-flower {
+      transform: translateX(10%);
+      opacity: 0;
+    }
+    &--start &__img-girl-1,
+    &--start &__img-girl-2 {
+      opacity: 0;
+    }
+    &--start &__img-girl-3 {
+      transform: translateX(50%);
+    }
+    &--start &__heading-1 {
+      transform: translateX(150%);
+    }
+    &--start &__heading-2,
+    &--start &__heading-text {
+      transform: translateX(-150%);
+    }
+    
+    // animation start
+    &--start.animation-start &__img-girl-3 {
+      transform: translateX(0);
+      opacity: 0;
+      transition: transform 1.5s ease-out, opacity 1s 3s;
+    }
+    &--start.animation-start &__img-girl {
+      animation: scale-simple 2s 4s forwards;
+    }
+    &--start.animation-start &__img-girl-1 {
+      transition: opacity 2.6s 6.9s;
+      opacity: 1;
+    }
+    &--start.animation-start &__img-girl-2 {
+      animation: fade-toggle 3.6s 4.5s;
+    }
+    &--start.animation-start &__img-flower-ball {
+      transform: translateX(0);
+      transition: transform 1.5s ease-out;
+    }
+    &--start.animation-start &__img-flower {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 0.5s 1s, opacity 0.5s 1s;
+    }
+    &--start.animation-start &__img-ball-2.front {
+      animation: flowerball-1-half 3s 1s linear forwards;
+    }
+    &--start.animation-start &__img-poly-1,
+    &--start.animation-start &__img-poly-2,
+    &--start.animation-start &__img-poly-3,
+    &--start.animation-start &__img-ball-1 {
+      transition: transform 1s 0.5s, opacity 0.5s 0.5s;
+      transform: translateX(0);
+      opacity: 1;
+    }
+    &--start.animation-start &__heading-1 {
+      transition: transform 1s 7.5s;
+      transform: translateX(0);
+    }
+    &--start.animation-start &__heading-2 {
+      transition: transform 1s 8.5s;
+      transform: translateX(0);
+    }
+    &--start.animation-start &__heading-text {
+      transition: transform 1s 9.5s;
+      transform: translateX(0);
+    }
+    
+    // animation infinite
+    &--start.animation-start &__img-poly-1 {
+      transform-origin: top center;
+      animation: cardio 1.8s 1.5s infinite;
+    }
+    &--start.animation-start &__img-poly-2 {
+      transform-origin: top center;
+      animation: diagon-sliding 3s 1.5s infinite;
+    }
+    &--start.animation-start &__img-poly-3 {
+      transform-origin: top center;
+      animation: squeeze 1s 1.5s infinite;
+    }
+    &--start.animation-start &__img-ball-1 {
+      transform-origin: top center;
+      animation: vertical-sliding 3s 1.5s infinite;
+    }
+    &--start.animation-start &__img-flower-ball {
+      transform-origin: top center;
+      animation: vertical-sliding-small 5s 3s infinite;
+    }
+  }
+}

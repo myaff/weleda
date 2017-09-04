@@ -1,0 +1,29 @@
+.section {
+
+  &--blogers::before {
+    content: '';
+    display: block;
+    @include absolute(top -2.5rem left 0 right 0);
+    @include size(100%, 290px);
+    background: url('../img/pink-shtrih-4.png') top center no-repeat;
+    z-index: 0;
+    
+    @media #{$gl-xs} {
+      height: 440px;
+    }
+  }
+
+  &--blogers &__content {
+    margin-top: -12rem;
+  }
+  
+  &--blogers &__heading {
+    z-index: 2;
+    max-width: 28rem;
+    margin-left: 8rem;
+    
+    @media #{$gl-xs} {
+      text-align: left;
+    }
+  }
+}

@@ -83,3 +83,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Local utility files
+design/*
+build/*

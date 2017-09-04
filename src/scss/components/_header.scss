@@ -1,0 +1,27 @@
+.header {
+  @include fixed(top 0 left 0);
+  @include size(100vw, $header-height);
+  z-index: $z-index--header;
+
+  .container {
+    max-width: 970px;
+  }
+  
+  .no-touch & {
+    padding-right: $scroll-width;
+  }
+
+  background: $header-bg;
+  color: $header-color;
+  
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0;
+  }
+
+  @import 'logo';
+}
+
+@import 'social-btns';

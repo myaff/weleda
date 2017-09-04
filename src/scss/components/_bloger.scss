@@ -1,0 +1,197 @@
+.bloger {
+  display: flex;
+    
+  @media #{$gl-xs} {
+    height: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background: linear-gradient(to bottom, transparent 10rem, $pink 45rem, $pink 100%);
+    padding-left: 6.5rem;
+  }
+  
+  &__avatar {
+    flex: 0 0 13.125rem;
+    padding-top: 11rem;
+    
+    @media screen and (max-width: 48rem) {
+      flex-basis: 10rem;
+    }
+    
+    @media #{$gl-xs} {
+      flex-basis: 100%;
+      padding-top: 16rem;
+    }
+    
+    img {
+      display: block;
+      width: 100%;
+      max-width: 27rem;
+      background: url('../img/bloger-sky.png') top center no-repeat;
+    
+      @media #{$gl-xs} {
+        background: none;
+      }
+    }
+    
+    &-overlay {
+      @include size(100%, calc(100% - 305px));
+      background: $body-bg;
+    
+      @media #{$gl-xs} {
+        @include size(0);
+      }
+      
+      &::before {
+        content: '';
+        display: block;
+        @include absolute(bottom 100% left 0);
+        @include size(0px, 1rem);
+        border-bottom: 8.125rem solid $body-bg;
+        border-left: 13.125rem solid transparent;
+    
+        @media #{$gl-xs} {
+          border-bottom: 16rem solid $pink;
+          border-left-width: 33.5rem;
+        }
+      }
+    }
+  }
+  
+  &__content {
+    flex: 0 1 calc(100% - 13.125rem);
+    max-width: calc(100% - 13.125rem);
+    height: 45rem;
+    padding: 15rem 0 0;
+    padding-left: 11%;
+    color: $white;
+    
+    @media #{$gl-sm} {
+      padding-left: 5%;
+    }
+    
+    @media screen and (max-width: 48rem) {
+      flex-basis: calc(100% - 10rem);
+      max-width: calc(100% - 10rem);
+    }
+    
+    @media screen and (max-width: 45rem) {
+      min-height: 45rem;
+      height: auto;
+    }
+    
+    @media #{$gl-xs} {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0 1.5rem;
+      margin-top: -5.5rem;
+    }
+    
+    .tp-heading--medium {
+      color: $white;
+    }
+    
+    &::before {
+      content: '';
+      display: block;
+      @include absolute(bottom 0 left 0);
+      width: calc(100% + (100vw - 100%) / 2 + 13.125rem);
+      height: 100%;
+      background: linear-gradient(to top, $pink 0%, $pink 85%, transparent 100%);
+    
+      @media #{$gl-xs} {
+        display: none;
+      }
+    }
+  }
+  
+  &__name {
+    @media #{$gl-xs} {
+      max-width: 50vw;
+      margin-left: auto;
+      margin-right: 0;
+      margin-bottom: 4rem;
+      
+      .tp-heading--medium {
+        display: inline-block;
+        font-size: 9vw;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  
+  &__carousel {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    width: calc(100% - 3rem);
+    
+    @media #{$gl-xs} {
+      margin: 0;
+    }
+  }
+  
+  &__text {
+    min-height: 21rem;
+  }
+  
+  @media #{$landscape} {
+    // default state
+    &__content::before {
+      transform: translateX(-13.125rem);
+      transition: transform 0.5s;
+    }
+    &__avatar {
+      overflow: hidden;
+      img {
+        transform: translateY(100%);
+        background-position-y: 3rem; 
+        transition: transform 0.5s 0.6s, background-position 0.3s 1s;
+      }
+      &-overlay {
+        transform: translateY(-277px);
+        height: 110%;
+        transition: transform 0.5s 0.5s, height 0.5s 0.5s;
+      }
+      &-overlay::before {
+        border-bottom-width: 0;
+        transition: border-width 0.3s 0.5s;
+      }
+    }
+    &__name,
+    &__carousel {
+      transform: translateX(30%);
+      opacity: 0;
+      transition: transform 1s, opacity 0.5s;
+    }
+    
+    // animation
+    .animation-start .is-active &__content::before {
+      transform: translateX(0);
+    }
+    .animation-start .is-active &__avatar {
+      img {
+        transform: translateY(0);
+        background-position: top;
+      }
+      &-overlay {
+        transform: translateY(0);
+        height: calc(100% - 305px);
+      }
+      &-overlay::before {
+        border-bottom-width: 8.125rem;
+        transform: scaleY(1);
+      }
+    }
+    .animation-start .is-active &__name,
+    .animation-start .is-active &__carousel {
+      transform: translateX(0);
+      opacity: 1;
+      transition: opacity 0.5s, transform 1s;
+    }
+    .animation-start .is-active &__name {
+      transition-delay: 1s;
+    }
+    .animation-start .is-active &__carousel {
+      transition-delay: 1.5s;
+    }
+  }
+}

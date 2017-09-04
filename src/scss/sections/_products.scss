@@ -1,0 +1,29 @@
+.section {
+  &--products {
+    padding-bottom: 31.5rem;
+    background: url('../img/white-shtrih.png') top 10rem center no-repeat,
+                url('../img/flower-5.png') bottom -5rem center no-repeat;
+    @media #{$gl-xs} {
+      padding-bottom: 2rem;
+      background: none;
+    }
+  }
+  
+  &--products &__heading {
+    color: $pink--light;
+  }
+  
+  &--products &__text {
+    z-index: 1;
+  }
+  
+  &--products &__img-flower {
+    left: calc(-1 * (100vw - 100%) / 2);
+    @include size(640px);
+    background: url('../img/flower-5.png') right center no-repeat;
+    background-size: cover;
+    transform: rotate(-90deg);
+    margin: -7rem 0 -3rem;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,88 @@
+p {
+  margin: 0;
+}
+
+[class*="tp-heading"] {
+  color: $color--heading;
+  font-weight: bold;
+  line-height: 1.142;
+  letter-spacing: 0.1em;
+}
+.tp-heading {
+  &--large {
+    @include heading {
+      font-size: $font-size--huge;
+    
+      @media #{$gl-xs} {
+        font-size: 13vw;
+      }
+    }
+  }
+  &--big {
+    @include heading {
+      font-size: $font-size--large;
+    
+      @media #{$gl-xs} {
+        font-size: 9vw;
+      }
+    }
+  }
+  &--medium {
+    @include heading {
+      font-size: $font-size--big;
+    
+      @media #{$gl-xs} {
+        font-size: 5vw;
+      }
+    }
+  }
+}
+
+.tp-body {
+  &--large {
+    font-size: $font-size--bigger;
+    line-height: 1.333;
+    font-weight: 600;
+    
+    @media #{$gl-xs} {
+      font-size: 6vw;
+    }
+  }
+  &--medium {
+    font-size: $font-size--medium;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+  &--base {
+    font-size: $font-size--base;
+    letter-spacing: 0.04em;
+    
+    @media #{$gl-xs} {
+      //font-size: 1.5rem;
+      font-size: 4vw;
+    }
+  }
+  &--small {
+    font-size: $font-size--small;
+    letter-spacing: 0.04em;
+    line-height: 1.25rem;
+    
+    @media #{$gl-xs} {
+      //font-size: 1.5rem;
+      font-size: 4vw;
+    }
+  }
+}
+
+.styled-title {
+  color: $white;
+  text-shadow: 0 12px 54px rgba($gray--shadow, 0.4);
+}
+
+.tp-text {
+  @each $align in (left, right, center) {
+    &--#{$align} {
+      text-align: $align;
+    }
+  }
+}

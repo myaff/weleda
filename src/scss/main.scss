@@ -1,0 +1,26 @@
+@import 'mixins';
+@import 'variables';
+
+@import 'components/fonts';
+@import 'components/grid/gridlex';
+@import 'components/spacing';
+@import 'components/display';
+
+@import 'components/base';
+@import 'components/typography';
+@import 'components/svg-norm';
+@import 'components/header';
+@import 'components/carousel';
+@import 'components/product';
+@import 'components/collapsed-block';
+@import 'components/tabs';
+@import 'components/bloger';
+
+@import 'sections/start';
+@import 'sections/info';
+@import 'sections/lifestyle';
+@import 'sections/pad';
+@import 'sections/blogers';
+@import 'sections/products';
+
+@import 'components/animation';

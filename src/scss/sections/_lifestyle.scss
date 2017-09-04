@@ -1,0 +1,49 @@
+.section {
+  &--lifestyle {
+    background: linear-gradient(to bottom, $body-bg 0%, $white 100%);
+    perspective: 1000px;
+    
+    @media #{$gl-xs} {
+      overflow: hidden;
+    }
+  }
+  
+  &--lifestyle &__heading-text {
+    margin-left: -2.5rem;
+    
+    @media #{$gl-xs}{
+      margin-left: 0;
+    }
+  }
+  
+  &--lifestyle &__content {
+    margin-top: 11rem;
+  }
+  
+  &--lifestyle &__img-poly {
+    @include absolute(top 2.5rem right -8rem);
+    @include size(152px, 131px);
+    background: url('../img/poly-6.png') center no-repeat;
+    z-index: 0;
+    
+    @media #{$gl-xs} {
+      right: 80%;
+    }
+  }
+  
+  @media #{$landscape} {
+    // default state
+    &--lifestyle &__img-poly {
+      transform: translate(50%, -50%);
+      opacity: 0;
+    }
+    
+    //animation
+    &--lifestyle.animation-start &__img-poly {
+      transform: translate(0);
+      opacity: 1;
+      transition: transform 1s, opacity 0.5s;
+      animation: squeeze 1s 1s infinite;
+    }
+  }
+}

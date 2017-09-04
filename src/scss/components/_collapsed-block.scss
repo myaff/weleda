@@ -1,0 +1,285 @@
+.collapsed-block {
+  $big-rect-bg: $white;
+  $small-rect-bg: $green--dark;
+  
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  
+  @media #{$gl-xs} {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &__big-rect,
+  &__small-rect {
+    @include absolute(top 0);
+    z-index: 2;
+    box-shadow: 0 0 92px 0 rgba($gray--shadow, 0.15);
+  }
+  
+  &__big-rect {
+    @include size(70%, 100%);
+    background: $big-rect-bg;
+    
+    @media #{$gl-xs} {
+      @include size(100%, 53.7%);
+      top: auto;
+      bottom: 0;
+    }
+  }
+  
+  &--left &__big-rect {
+    left: 0;
+  }
+  &--right &__big-rect {
+    right: 0;
+  }
+  
+  &--styled &__big-rect {
+    width: 50%;
+    left: -1.5rem;
+    background: $big-rect-bg url('../img/pink-shtrih-3.png') left center no-repeat;
+    background-size: contain;
+    
+    @media #{$gl-xs} {
+      @include size(100%);
+      left: 0;
+      background: $big-rect-bg;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        display: block;
+        @include absolute(top -7.5rem left 0);
+        @include size(240px, 730px);
+        background: url('../img/pink-shtrih-2.png') bottom right no-repeat;
+        background-size: cover;
+        opacity: 0.6;
+        z-index: 3;
+      }
+    }
+  }
+  
+  &--styled &__shtrih,
+  &--styled &__ball {
+    display: block;
+    position: absolute;
+  }
+    
+   &--styled &__shtrih {
+    top: -1.25rem;
+    left: -2.5rem;
+    @include size(124px, 280px);
+    background: url('../img/pink-shtrih-2.png') top left no-repeat;
+    background-size: contain;
+    z-index: 0;
+    
+    @media #{$gl-xs} {
+      @include size(240px, 730px);
+      top: -7.5rem;
+      left: 0;
+      z-index: 1;
+    }
+  }
+    
+  &--styled &__ball {
+    top: -2.5rem;
+    left: 2.5rem;
+    z-index: 1;
+    @include circle(100px);
+    background: url('../img/ball-2.png') center no-repeat;
+    background-size: contain;
+    
+    @media #{$gl-xs} {
+      @include circle(200px);
+      top: -7.5rem;
+      left: 18%;
+      z-index: 0;
+    }
+  }
+  
+  &__small-rect {
+    @include size(5rem, 100%);
+    background: $small-rect-bg;
+    
+    @media #{$gl-xs} {
+      @include size(150px, 120px);
+      background: $big-rect-bg;
+      top: 14rem;
+      box-shadow: none;
+    }
+  }
+  
+  &--left &__small-rect {
+    right: 0;
+    
+    @media #{$gl-xs} {
+      left: -1.5rem;
+      right: auto;
+    }
+  }
+  &--right &__small-rect {
+    left: 0;
+    
+    @media #{$gl-xs} {
+      left: auto;
+      right: -1.5rem;
+    }
+  }
+  
+  &--styled &__small-rect {
+    @media #{$gl-xs} {
+      @include size(100%, 4.75rem);
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: $small-rect-bg;
+      box-shadow: 0 0 92px 0 rgba($gray--shadow, 0.15);
+    }
+  }
+  
+  &__text {
+    position: relative;
+    z-index: 3;
+    padding: 2rem 1.5rem;
+    overflow: hidden;
+    
+    @media #{$gl-xs} {
+      padding: 6.5rem 14%;
+    }
+  }
+  
+  &--left &__text {
+    padding-right: 6.5rem;
+  }
+  &--right &__text {
+    padding-left: 6.5rem;
+  }
+  
+  &--styled &__text {
+    padding-top: 4rem;
+    margin-left: -1.5rem;
+    
+    @media #{$gl-xs} {
+      padding-top: 10rem;
+      margin: 0;
+    }
+    
+    &::before {
+      content: '';
+      display: block;
+      @include absolute(top 2.5rem left 1.5rem);
+      @include size(3.5rem, 10px);
+      background: $small-rect-bg;
+    
+      @media #{$gl-xs} {
+        @include size(13.75rem, 1.5rem);
+        top: 5rem;
+        left: 14%;
+      }
+    }
+  }
+  
+  @media #{$landscape} {
+    // default state
+    &__small-rect {
+      z-index: 4;
+    }
+    &--left &__text > div {
+      transform: translateX(50%);
+      opacity: 0;
+    }
+    &--left &__big-rect {
+      transform: translateX(70px) scaleX(0);
+      transform-origin: right center;
+    }
+    &--left &__small-rect {
+      transform: translateX(-60px) scaleX(0);
+      transform-origin: left center;
+    }
+    &--right &__text > div {
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+    &--right &__big-rect {
+      transform: translateX(-60px) scaleX(0);
+      transform-origin: left center;
+    }
+    &--right &__small-rect {
+      transform: translateX(70px) scaleX(0);
+      transform-origin: right center;
+    }
+    &--styled &__big-rect {
+      transform: translateX(130px) scaleX(0);
+    }
+    &--styled &__small-rect {
+      transform: translateX(-140px) scaleX(0);
+    }
+    &--styled &__shtrih {
+      transform: translateX(140px);
+      opacity: 0;
+    }
+    &--styled &__ball {
+      transform: translateX(120px);
+      opacity: 0;
+    }
+    &--styled &__text::before {
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    
+    // animation
+    .animation-start &__shtrih,
+    .animation-start &__ball {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 0.5s 1.5s, opacity 0.3s 1.5s;
+    }
+    .animation-start &--left {
+      animation-delay: 1s;
+    }
+    .animation-start &--left &__big-rect {
+      animation: scale-translate-70 1s forwards;
+      animation-delay: inherit;
+    }
+    .animation-start &--left &__small-rect {
+      animation: scale-translate-60 1s forwards;
+      animation-delay: inherit;
+    }
+    .animation-start &--right {
+      animation-delay: 2s;
+    }
+    .animation-start &--right &__big-rect {
+      animation: scale-translate-60 1s forwards;
+      animation-delay: inherit;
+    }
+    .animation-start &--right &__small-rect {
+      animation: scale-translate-70 1s forwards;
+      animation-delay: inherit;
+    }
+    .animation-start &--styled &__big-rect {
+      animation: scale-translate-130 1s forwards;
+      animation-delay: inherit;
+    }
+    .animation-start &--styled &__small-rect {
+      animation: scale-translate-140 1s forwards;
+      animation-delay: inherit;
+    }
+    .animation-start &__text > div {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 0.5s, opacity 0.3s;
+      transition-delay: inherit;
+    }
+    .animation-start &--left &__text {
+      transition-delay: 2s;
+    }
+    .animation-start &--right &__text {
+      transition-delay: 3s;
+    }
+    .animation-start &--styled &__text::before {
+      transform: scaleX(1);
+      transition: transform 0.3s 1.5s;
+    }
+  }
+}

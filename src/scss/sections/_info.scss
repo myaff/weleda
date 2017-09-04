@@ -1,0 +1,160 @@
+.section {
+  &--info {
+    background: $white;
+    padding-top: 6.75rem;
+    perspective: 1000px;
+    
+    @media #{$gl-xs} {
+      background: #fbfbfb;
+    }
+  }
+  
+  &--info &__img-flower-1 {
+    @include absolute(top 4rem right 100%);
+    margin-right: -12%;
+    @include size(470px, 440px);
+    background: url('../img/flower-2.png') center no-repeat;
+    background-size: contain;
+    
+    @media screen and (min-width: 120rem) {
+      left: calc(-1 * (100vw - 100%) / 2);
+      right: auto;
+      margin: 0;
+    }
+    
+    @media #{$gl-xs} {
+      top: -4.25rem;
+      right: 45%;
+      margin-right: 0;
+      
+      &::before {
+        content: '';
+        display: block;
+        @include absolute(top 0 left 0);
+        @include size(100%);
+        background: linear-gradient(to top, rgba(#fbfbfb, 0.6) 0%, rgba(#fbfbfb, 0.6) 60%, transparent 100%);
+      }
+    }
+  }
+  &--info &__img-shtrih {
+    @include absolute(bottom 1rem left 100%);
+    margin-left: -30.8%;
+    @include size(670px, 460px);
+    background: url('../img/pink-shtrih-1.png') center no-repeat;
+    background-size: contain;
+    
+    @media #{$gl-xs} {
+      top: 39rem;
+      right: 50%;
+      left: auto;
+      height: 380px;
+      background-position: right center;
+    }
+  }
+  &--info &__img-poly-1 {
+    @include absolute(top 0 right 14.5%);
+    @include size(82px, 85px);
+    background: url('../img/poly-4.png') center no-repeat;
+    background-size: contain;
+    
+    @media #{$gl-xs} {
+      top: -4.25rem;
+      margin-left: -18.5%;
+    }
+  }
+  &--info &__img-poly-2 {
+    @include absolute(top 25.5rem left 8.5%);
+    @include size(105px, 88px);
+    background: url('../img/poly-5.png') center no-repeat;
+    background-size: contain;
+    
+    @media #{$gl-xs} {
+      top: 38.5rem;
+      left: 1%;
+    }
+  }
+  &--info &__img-flower-ball {
+    @include absolute(top -13.5rem left 50%);
+    margin-left: -18rem;
+    @include size(240px, 154px);
+    
+    @media #{$gl-xs} {
+      position: relative;
+      top: -2.5rem;
+      margin: 0 auto;
+      left: 1rem;
+    }
+  }
+  &--info &__img-flower-2,
+  &--info &__img-ball {
+    @include absolute(top 0);
+  }
+  &--info &__img-flower-2 {
+    left: 77px;
+    @include size(153px, 100%);
+    background: url('../img/flower-3.png') left center no-repeat;
+    background-size: contain;
+  }
+  &--info &__img-ball {
+    height: 100%;
+    background: url('../img/ball-2.png') left center no-repeat;
+    background-size: cover;
+    
+    &.back {
+      width: 77px;
+      left: 0;
+    }
+    
+    &.front {
+      width: 77px;
+      left: 77px;
+      background-position: right center;
+    }
+  }
+  
+  @media #{$landscape} {
+    //default state
+    &--info &__img-flower-2 {
+      opacity: 0;
+      transform: translateX(-30%);
+    }
+    &--info &__img-poly-1 {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+    &--info &__img-poly-2 {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    &--info &__img-flower-ball {
+      transform: translateX(-50vw);
+    }
+    
+    // animation
+    &--info.animation-start &__img-poly-1 {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 0.5s, opacity 0.3s;
+      animation: star-sliding 10s 0.5s infinite;
+    }
+    &--info.animation-start &__img-poly-2 {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 1s 0.5s, opacity 0.5s 0.5s;
+      animation: squeeze-2 2s 1.5s infinite;
+    }
+    &--info.animation-start &__img-flower-2 {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 1.5s 1s ease, opacity 0.3s 1s;
+    }
+    &--info.animation-start &__img-ball.front {
+      animation: flowerball-2-half 4s 1s linear forwards;
+    }
+    &--info.animation-start &__img-flower-ball {
+      transform: translateX(0);
+      transition: transform 2s;
+      animation: vertical-sliding-small 5s 3s infinite;
+    }
+  }
+}
