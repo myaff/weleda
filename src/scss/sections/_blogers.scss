@@ -9,12 +9,16 @@
     z-index: 0;
     
     @media #{$gl-xs} {
-      height: 440px;
+      height: 68.75vw;
     }
   }
 
   &--blogers &__content {
     margin-top: -12rem;
+    
+    @media #{$gl-xs} {
+      margin-top: -30vw;
+    }
   }
   
   &--blogers &__heading {
@@ -24,6 +28,8 @@
     
     @media #{$gl-xs} {
       text-align: left;
+      max-width: 70vw;
+      margin-left: 20vw;
     }
   }
 }

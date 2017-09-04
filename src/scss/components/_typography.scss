@@ -65,11 +65,12 @@ p {
   &--small {
     font-size: $font-size--small;
     letter-spacing: 0.04em;
-    line-height: 1.25rem;
+    line-height: 1.43;
     
     @media #{$gl-xs} {
       //font-size: 1.5rem;
       font-size: 4vw;
+      line-height: 1.5;
     }
   }
 }

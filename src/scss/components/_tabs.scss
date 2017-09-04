@@ -13,7 +13,8 @@
     
     @media #{$gl-xs} {
       @include absolute(top 0 left 0);
-      height: calc(100vh - #{$header-height});
+      width: 16.25vw;
+      height: calc(100vh - #{$header-height-pt});
       z-index: 2;
     }
   }
@@ -48,7 +49,8 @@
     }
     
     @media #{$gl-xs} {
-      width: calc(100vh - #{$header-height});
+      width: calc(100vh - #{$header-height-pt});
+      height: 16.25vw;
     }
   }
   
@@ -114,6 +116,10 @@
     line-height: 1;
     letter-spacing: 0.1em;
     z-index: 2;
+    
+    @media #{$gl-xs} {
+      font-size: 3.13vw;
+    }
   }
   
   &__content-item {

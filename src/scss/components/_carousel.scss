@@ -138,15 +138,15 @@ $product-carousel-product-height: 25.625rem;
   padding-bottom: 3rem;
     
     @media #{$gl-xs} {
-      padding-bottom: 9.5rem;
+      padding-bottom: 23.75vw;
     }
   .owl-nav {
     @include absolute(bottom 0 left 0);
     @include size(100%, 2.5rem);
     
     @media #{$gl-xs} {
-      bottom: 3rem;
-      height: 3.5rem;
+      bottom: 7.5vw;
+      height: 8.75vw;
     }
   }
   .owl-prev,
@@ -154,7 +154,7 @@ $product-carousel-product-height: 25.625rem;
     @include size(5rem, 2.5rem);
     
     @media #{$gl-xs} {
-      @include size(40%, 3.5rem);
+      @include size(40%, 8.75vw);
       
       &::after {
         background-size: 100%;

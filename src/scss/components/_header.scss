@@ -2,6 +2,10 @@
   @include fixed(top 0 left 0);
   @include size(100vw, $header-height);
   z-index: $z-index--header;
+  
+  @media #{$portrait} {
+    height: $header-height-pt;
+  }
 
   .container {
     max-width: 970px;

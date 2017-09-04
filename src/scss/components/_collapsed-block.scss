@@ -50,8 +50,10 @@
       &::before {
         content: '';
         display: block;
-        @include absolute(top -7.5rem left 0);
-        @include size(240px, 730px);
+        //@include absolute(top -7.5rem left 0);
+        @include absolute(top -18.75vw left 0);
+        //@include size(240px, 730px);
+        @include size(37.5vw, 114vw);
         background: url('../img/pink-shtrih-2.png') bottom right no-repeat;
         background-size: cover;
         opacity: 0.6;
@@ -75,8 +77,8 @@
     z-index: 0;
     
     @media #{$gl-xs} {
-      @include size(240px, 730px);
-      top: -7.5rem;
+      @include size(37.5vw, 114vw);
+      top: -18.75vw;
       left: 0;
       z-index: 1;
     }
@@ -91,8 +93,8 @@
     background-size: contain;
     
     @media #{$gl-xs} {
-      @include circle(200px);
-      top: -7.5rem;
+      @include circle(31.25vw);
+      top: -18.75vw;
       left: 18%;
       z-index: 0;
     }
@@ -103,9 +105,9 @@
     background: $small-rect-bg;
     
     @media #{$gl-xs} {
-      @include size(150px, 120px);
+      @include size(23.44vw, 18.75vw);
       background: $big-rect-bg;
-      top: 14rem;
+      top: 35vw;
       box-shadow: none;
     }
   }
@@ -114,7 +116,7 @@
     right: 0;
     
     @media #{$gl-xs} {
-      left: -1.5rem;
+      left: -3.75vw;
       right: auto;
     }
   }
@@ -123,13 +125,13 @@
     
     @media #{$gl-xs} {
       left: auto;
-      right: -1.5rem;
+      right: -3.75vw;
     }
   }
   
   &--styled &__small-rect {
     @media #{$gl-xs} {
-      @include size(100%, 4.75rem);
+      @include size(100%, 11.88vw);
       top: 100%;
       left: 0;
       right: 0;
@@ -145,15 +147,23 @@
     overflow: hidden;
     
     @media #{$gl-xs} {
-      padding: 6.5rem 14%;
+      padding: 16.25vw 14%;
     }
   }
   
   &--left &__text {
     padding-right: 6.5rem;
+    
+    @media #{$gl-xs} {
+      padding-right: 16.25vw;
+    }
   }
   &--right &__text {
     padding-left: 6.5rem;
+    
+    @media #{$gl-xs} {
+      padding-left: 16.25vw;
+    }
   }
   
   &--styled &__text {
@@ -161,7 +171,7 @@
     margin-left: -1.5rem;
     
     @media #{$gl-xs} {
-      padding-top: 10rem;
+      padding-top: 25vw;
       margin: 0;
     }
     
@@ -173,8 +183,8 @@
       background: $small-rect-bg;
     
       @media #{$gl-xs} {
-        @include size(13.75rem, 1.5rem);
-        top: 5rem;
+        @include size(34.38vw, 3.75vw);
+        top: 12.5vw;
         left: 14%;
       }
     }

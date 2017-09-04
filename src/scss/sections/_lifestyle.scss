@@ -4,6 +4,7 @@
     perspective: 1000px;
     
     @media #{$gl-xs} {
+      padding-top: 17.5vw;
       overflow: hidden;
     }
   }
@@ -17,17 +18,19 @@
   }
   
   &--lifestyle &__content {
-    margin-top: 11rem;
+    margin-top: 27.5vw;
   }
   
   &--lifestyle &__img-poly {
     @include absolute(top 2.5rem right -8rem);
     @include size(152px, 131px);
     background: url('../img/poly-6.png') center no-repeat;
+    background-size: contain;
     z-index: 0;
     
     @media #{$gl-xs} {
       right: 80%;
+      @include size(23.75vw, 20.47vw);
     }
   }
   

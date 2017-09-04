@@ -2,10 +2,18 @@
   &--pad {
     background: $pink--lighter;
     padding: 7.5rem 0;
+    
+    @media #{$gl-xs}{
+      padding: 18.75vw 0;
+    }
   }
   
   &--pad &__heading {
     margin-bottom: 19rem;
+    
+    @media #{$gl-xs}{
+      margin-bottom: 47.5vw;
+    }
   }
   
   &--pad &__text {
@@ -21,10 +29,12 @@
     margin-left: 1.5rem;
     @include size(504px, 435px);
     background: url('../img/flower-4.png') center no-repeat;
+    background-size: contain;
     z-index: 1;
     
     @media #{$gl-xs} {
-      top: 4.5rem;
+      @include size(78.75vw, 68vw);
+      top: 11.25vw;
       left: auto;
       right: 24%;
       margin-left: 0;

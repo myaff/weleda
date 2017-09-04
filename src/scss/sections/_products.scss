@@ -4,7 +4,7 @@
     background: url('../img/white-shtrih.png') top 10rem center no-repeat,
                 url('../img/flower-5.png') bottom -5rem center no-repeat;
     @media #{$gl-xs} {
-      padding-bottom: 2rem;
+      padding-bottom: 5vw;
       background: none;
     }
   }
@@ -17,13 +17,17 @@
     z-index: 1;
   }
   
+  &--products &__content {
+    margin-bottom: 10vw;
+  }
+  
   &--products &__img-flower {
     left: calc(-1 * (100vw - 100%) / 2);
-    @include size(640px);
+    @include size(100vw);
     background: url('../img/flower-5.png') right center no-repeat;
     background-size: cover;
     transform: rotate(-90deg);
-    margin: -7rem 0 -3rem;
+    margin: -17.5vw 0 -7.5vw;
     z-index: 0;
   }
 }
