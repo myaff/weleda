@@ -1,6 +1,8 @@
 $product-color: $gray--light;
 $product-height: $product-carousel-product-height;
 $image-height: $product-carousel-image-height;
+$product-height-ls: $product-carousel-product-height-ls;
+$image-height-ls: $product-carousel-image-height-ls;
 
 .product {
   height: $image-height;
@@ -11,7 +13,12 @@ $image-height: $product-carousel-image-height;
   flex-wrap: wrap;
   justify-content: center;
   
-  @media #{$gl-xs} {
+  @media #{$gl-xs} and (orientation: landscape) {
+    padding: 2rem 3rem;
+    height: $image-height-ls;
+  }
+  
+  @media #{$gl-xs} and (orientation: portrait) {
     padding: 14vw;
     height: auto;
   }
@@ -20,8 +27,11 @@ $image-height: $product-carousel-image-height;
   &__img {
     width: 50%;
     
-    @media #{$gl-xs} {
+    @media #{$gl-xs} and (orientation: portrait) {
       width: 100%;
+    }
+    @media #{$gl-xs} and (orientation: landscape) {
+      width: 60%;
     }
   }
   
@@ -37,9 +47,14 @@ $image-height: $product-carousel-image-height;
     height: $image-height;
     margin: -4rem 0;
     
-    @media #{$gl-xs} {
+    @media #{$gl-xs} and (orientation: portrait) {
       margin: -14vw 0 0;
       height: 110vw;
+    }
+    @media #{$gl-xs} and (orientation: landscape) {
+      width: 40%;
+      height: $image-height-ls;
+      margin: -2rem 0;
     }
     
     img {
@@ -47,15 +62,24 @@ $image-height: $product-carousel-image-height;
       @include size(auto);
       @include max-size(100%);
       
-      @media #{$gl-xs} {
+      @media #{$gl-xs} and (orientation: portrait) {
         max-height: initial;
       }
     }
   }
   
   &__name {
-    @media #{$gl-xs} {
+    @media #{$gl-xs} and (orientation: portrait) {
       font-size: 5.63vw;
+    }
+    @media #{$gl-xs} and (orientation: landscape) {
+      font-size: 4vw;
+    }
+  }
+  
+  &__desc {
+    @media #{$gl-xs} and (orientation: landscape) {
+      font-size: 3vw;
     }
   }
   

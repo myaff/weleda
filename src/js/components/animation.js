@@ -36,7 +36,8 @@ function addStickyScene (el, controller) {
       triggerElement: el,
       triggerHook: 0,
       offset: offsetHeight,
-      duration: durationHeight
+      //duration: durationHeight
+      duration: 100%
     })
     .setPin(el)
     .addTo(controller);

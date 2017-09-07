@@ -5,9 +5,13 @@
     overflow: hidden;
     perspective: 1000px;
     
-    @media #{$portrait}, #{$gl-xs} {
+    @media #{$portrait} {
       height: calc(100vh - #{$header-height-pt});
       padding: 49vh 1.5rem 0;
+    }
+    @media #{$landscape-down} {
+      height: calc(150vw - #{$header-height-pt});
+      padding: 73.44vw 1.5rem 0;
     }
   }
   
@@ -18,8 +22,8 @@
     z-index: 4;
     font-size: 7vh;
     
-    //@media #{$gl-xs} {
-    @media #{$portrait} {
+    @media #{$gl-xs} {
+    //@media #{$portrait} {
       max-width: 100%;
       position: relative;
       font-size: 8vw;
@@ -31,9 +35,9 @@
       right: 0;
       margin-right: 0.75rem;
     
-      //@media #{$gl-xs} {
-      @media #{$portrait} {
-      bottom: auto;
+      @media #{$gl-xs} {
+      //@media #{$portrait} {
+        bottom: auto;
         left: 0;
         right: 0;
         margin: 0;
@@ -45,8 +49,8 @@
       left: 0;
       margin-left: 0.75rem;
     
-      //@media #{$gl-xs} {
-      @media #{$portrait} {
+      @media #{$gl-xs} {
+      //@media #{$portrait} {
         bottom: auto;
         left: 0;
         right: 0;
@@ -56,7 +60,8 @@
   }
   
   &--start &__heading-text {
-    width: 19rem;
+    //width: 19rem;
+    width: 31.67vh;
     //@include absolute(top 17rem left 50%);
     @include absolute(top 22vh left 0);
     margin-left: 0.75rem;
@@ -64,16 +69,22 @@
     font-size: 2.8vh;
     line-height: 1.2;
     
-    //@media #{$gl-xs} {
-    @media #{$portrait} {
+    @media #{$gl-xs} {
       position: relative;
       top: auto;
       left: auto;
-      margin: 4vh auto 0;
       text-shadow: none;
+      font-size: 4vw;
       //width: 23.1rem;
-      width: 38vh;
       //width: 57.8vw;
+    }
+    @media #{$portrait} {
+      margin: 4vh auto 0;
+      width: 38vh;
+    }
+    @media #{$landscape-down} {
+      margin: 6.25vw auto 0;
+      width: 57.8vw;
     }
   }
   
@@ -82,7 +93,8 @@
     @include size(50%, 100%);
     overflow: hidden;
     
-    @media #{$portrait} {
+    //@media #{$portrait} {
+    @media #{$gl-xs} {
       position: relative;
       width: 100%;
       height: auto;
@@ -107,14 +119,19 @@
     background-size: contain;
     z-index: 0;
     
-    //@media #{$gl-xs} {
-    @media #{$portrait} {
+    @media #{$gl-md} {
       width: 120%;
       left: -10%;
       right: -10%;
       margin: 0;
-      top: -17.5vh;
       background-size: cover;
+    }
+    @media #{$portrait} {
+      top: -17.5vh;
+    }
+    @media #{$landscape-down} {
+      //top: -26.25vw;
+      top: 0;
     }
   }
   &--start &__img-shtrih-2 {
@@ -126,13 +143,18 @@
     background: url('../img/pink-shtrih-1.png') center no-repeat;
     background-size: contain;
     
-    //@media #{$gl-xs} {
-    @media #{$portrait} {
-      //bottom: -20rem;
-      bottom: -18vh;
+    @media #{$gl-xs} {
       left: 2%;
+      //bottom: -20rem;
       margin: 0;
       z-index: 4;
+    }
+    @media #{$portrait} {
+      bottom: -18vh;
+    }
+    @media #{$landscape-down} {
+      @include size(calc(135.57vw - #{$header-height-pt}), calc(95.85vw - #{$header-height-pt}));
+      bottom: -37vw;
     }
   }
   &--start &__img-shadow {
@@ -149,7 +171,8 @@
     //@include absolute(top 7rem right 50%);
     //@include size(108px, 117px);
     @include absolute(top 11.11vh right 50%);
-    margin-right: 23.75rem;
+    //margin-right: 23.75rem;
+    margin-right: 20vw;
     @include size(10.71vh, 11.61vh);
     background: url('../img/poly-1.png') center no-repeat;
     background-size: contain;
@@ -159,7 +182,8 @@
     //@include absolute(top 10.5rem left 50%);
     //@include size(97px, 141px);
     @include absolute(top 16.67vh left 50%);
-    margin-left: 28.125rem;
+    //margin-left: 28.125rem;
+    margin-left: 23.68vw;
     @include size(9.62vh, 13.99vh);
     background: url('../img/poly-2.png') center no-repeat;
     background-size: contain;
@@ -171,37 +195,50 @@
       top: 5.83vh;
       margin-left: -45vw;
     }
+    @media #{$landscape-down} {
+      @include size(14.43vw, 20.98vw);
+      top: 8.75vw;
+      margin-left: -45vw;
+      
+    }
   }
   &--start &__img-poly-3 {
     //@include absolute(bottom 12.5rem left 50%);
     //@include size(145px, 171px);
     @include absolute(bottom 19.84vh left 50%);
-    margin-left: 22.5rem;
+    //margin-left: 22.5rem;
+    margin-left: 18.95vw;
     @include size(14.38vh, 16.96vh);
     background: url('../img/poly-3.png') center no-repeat;
     background-size: contain;
     z-index: 5;
     
-    //@media #{$gl-xs} {
-    @media #{$portrait} {
-      //top: 19rem;
-      top: 31.67vh;
+    @media #{$gl-xs} {
       left: auto;
       right: 1%;
       margin: 0;
+    }
+    @media #{$portrait} {
+      //top: 19rem;
+      top: 31.67vh;
+    }
+    @media #{$landscape-down} {
+      @include size(21.57vw, 25.44vw);
+      top: 47.51vw;
     }
   }
   &--start &__img-ball-1 {
     //@include absolute(top 25rem right 50%);
     //@include size(64px, 108px);
     @include absolute(top 39.68vh right 50%);
-    margin-right: 32rem;
+    //margin-right: 32rem;
+    margin-right: 26.95vw;
     @include size(6.35vh, 10.71vh);
     background: url('../img/ball-1.png') center no-repeat;
     background-size: contain;
     
-    //@media #{$gl-xs} {
-    @media #{$portrait} {
+    @media #{$gl-xs} {
+    //@media #{$portrait} {
       //@include size(10rem, 5rem);
       @include size(25vw, 12.5vw);
       border-radius: 12.5vw 12.5vw 0 0;
@@ -231,16 +268,21 @@
     @include size(16.87vh, 19.84vh);
     z-index: 6;
     
-    //@media #{$gl-xs} {
-    @media #{$portrait} {
+    @media #{$gl-xs} {
       //height: 10rem;
-      height: 25vw;
       bottom: 2.5vh;
       left: auto;
       right: 0;
       margin: 0;
       background: url('../img/ball-2.png') right center no-repeat;
       background-size: contain;
+    }
+    @media #{$portrait} {
+      height: 25vw;
+    }
+    @media #{$landscape-down} {
+      @include size(25.3vw, 29.76vw);
+      bottom: 3.75vw;
     }
   }
   &--start &__img-flower {
@@ -279,8 +321,8 @@
     z-index: 3;
     transform-origin: right bottom;
     
-    //@media #{$gl-xs} {
-    @media #{$portrait} {
+    @media #{$gl-xs} {
+    //@media #{$portrait} {
       @include size(100%, auto);
       right: 0;
       top: 1.5rem;
@@ -335,8 +377,8 @@
     @include size(calc(66vh - #{$header-height}));
     z-index: 1;
     
-    //@media #{$gl-xs} {
-    @media #{$portrait} {
+    @media #{$gl-xs} {
+    //@media #{$portrait} {
       top: 1.5rem;
       //@include size(598px);
       @include size(93.44vw);

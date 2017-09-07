@@ -71,6 +71,8 @@ $dot-bg--hover: $pink--light;
 $product-carousel-bg: $white;
 $product-carousel-image-height: 31.25rem;
 $product-carousel-product-height: 25.625rem;
+$product-carousel-image-height-ls: 90vw;
+$product-carousel-product-height-ls: 80vw;
 .carousel-products {
   max-width: 41rem;
   margin: 0 auto;
@@ -85,7 +87,11 @@ $product-carousel-product-height: 25.625rem;
     border: 10px solid $pink--light;
     box-sizing: border-box;
     
-    @media #{$gl-xs} {
+    @media #{$gl-xs} and (orientation: landscape){
+      top: ($product-carousel-image-height-ls - $product-carousel-product-height-ls)/2;
+      height: $product-carousel-product-height-ls;
+    }
+    @media #{$gl-xs} and (orientation: portrait) {
       height: auto;
       top: 5.625rem;
       bottom: 0;

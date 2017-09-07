@@ -18,6 +18,12 @@
       z-index: 2;
     }
   }
+  @media #{$gl-xs} {
+    .scrollmagic-pin-spacer {
+      width: 16.25vw!important;
+      height: 100%!important;
+    }
+  }
   
   &__content {
     flex: 0 1 calc(100% - 8rem);
@@ -118,7 +124,7 @@
     z-index: 2;
     
     @media #{$gl-xs} {
-      font-size: 3.13vw;
+      font-size: 3vmin;
     }
   }
   
