@@ -3,7 +3,7 @@
   @include size(100vw, $header-height);
   z-index: $z-index--header;
   
-  @media #{$portrait} {
+  @media #{$portrait}, #{$gl-xs} {
     height: $header-height-pt;
   }
 

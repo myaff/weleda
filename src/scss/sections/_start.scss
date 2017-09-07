@@ -5,7 +5,7 @@
     overflow: hidden;
     perspective: 1000px;
     
-    @media #{$portrait} {
+    @media #{$portrait}, #{$gl-xs} {
       height: calc(100vh - #{$header-height-pt});
       padding: 49vh 1.5rem 0;
     }
@@ -319,7 +319,7 @@
   }
   &--start &__img-girl-3 {
     @include absolute(bottom 0 right 50%);
-    margin-right: -9rem;
+    margin-right: -7.5rem;
     //@include size(742px, 911px);
     @include size(68vh, 81vh);
     background: url('../img/girl-2.png') right top no-repeat;
@@ -353,7 +353,7 @@
     @include circle(100%);
     background: url('../img/sky.png') center no-repeat;
     background-size: cover;
-    animation: bg-scrolling 15s alternate infinite linear;
+    animation: bg-scrolling 25s alternate infinite linear;
   }
   
   @media #{$landscape} {
@@ -402,14 +402,14 @@
       transition: transform 1.5s ease-out, opacity 1s 3s;
     }
     &--start.animation-start &__img-girl {
-      animation: scale-simple 2s 4s forwards;
+      //animation: scale-simple 2s 4s forwards;
     }
     &--start.animation-start &__img-girl-1 {
-      transition: opacity 2.6s 6.9s;
+      transition: opacity 2.6s 4.9s;
       opacity: 1;
     }
     &--start.animation-start &__img-girl-2 {
-      animation: fade-toggle 3.6s 4.5s;
+      animation: fade-toggle 3.6s 2.5s;
     }
     &--start.animation-start &__img-flower-ball {
       transform: translateX(0);
@@ -447,7 +447,7 @@
     // animation infinite
     &--start.animation-start &__img-poly-1 {
       transform-origin: top center;
-      animation: cardio 1.8s 1.5s infinite;
+      animation: cardio 3.6s 1.5s infinite;
     }
     &--start.animation-start &__img-poly-2 {
       transform-origin: top center;

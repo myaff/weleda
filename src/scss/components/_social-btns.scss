@@ -5,9 +5,9 @@
   font-size: 1.25rem;
   line-height: 1;
   
-  @media #{$portrait} {
+  @media #{$portrait}, #{$gl-xs} {
     padding: 0.5em 1em;
-    font-size: 3.13vw;
+    font-size: 3.13vmin;
   }
   
   &,

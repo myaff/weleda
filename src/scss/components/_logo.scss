@@ -8,8 +8,8 @@
       max-height: 45px;
     }
     
-    @media #{$portrait} {
-      max-height: 8vw;
+    @media #{$portrait}, #{$gl-xs} {
+      max-height: 8vmin;
     }
   }
   

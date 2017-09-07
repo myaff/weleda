@@ -11,7 +11,7 @@ $gl-xs:        "screen and (max-width: 40rem)" !default; // up to 640px
 $gl-sm:        "screen and (max-width: 52rem)" !default; // max 832px
 $gl-md:        "screen and (max-width: 64rem)" !default; // max 1024px
 $gl-lg:        "screen and (max-width: 80rem)" !default; // max 1280px
-$gl-md-up:     "screen and (min-width: 64rem)" !default; // min 1024px
+$gl-md-up:     "screen and (min-width: 64.06rem)" !default; // min 1024px
 
 $glp_col-1: (100%/12);
 $glp_col-2: ($glp_col-1*2);

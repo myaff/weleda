@@ -278,7 +278,7 @@
     .animation-start &__text > div {
       transform: translateX(0);
       opacity: 1;
-      transition: transform 0.5s, opacity 0.3s;
+      transition: transform 1.5s, opacity 0.7s;
       transition-delay: inherit;
     }
     .animation-start &--left &__text {

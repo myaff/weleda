@@ -36,7 +36,7 @@ $body-bg: $gray--lighter;
 $header-bg: $pink--dark;
 $header-color: $white;
 $header-height: 4.25rem;
-$header-height-pt: 10.63vw;
+$header-height-pt: 10.63vmin;
 $scroll-width: 17px;
 
 $media-lg: 'screen and (min-width: 77rem)';
@@ -100,11 +100,12 @@ $spacers: (
 
 $grid-breakpoints: (
   xs: 0,
-  sm: 40rem,
+  sm: 40.06rem,
   md: 48rem,
   lg: 64rem,
   xl: 80rem
 ) !default;
 
+
 $portrait:     "screen and (orientation: portrait) and (max-width: 64rem)" !default; // max 1024px
-$landscape:     "screen and (orientation: landscape) and (min-width: 64rem)" !default; // min 1024px
+$landscape:     "screen and (orientation: landscape) and (min-width: 64.06rem)" !default; // min 1024px
