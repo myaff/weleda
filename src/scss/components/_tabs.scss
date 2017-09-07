@@ -14,14 +14,9 @@
     @media #{$gl-xs} {
       @include absolute(top 0 left 0);
       width: 16.25vw;
-      height: calc(100vh - #{$header-height-pt});
+      //height: calc(100vh - #{$header-height-pt});
+      height: 137.5vw;
       z-index: 2;
-    }
-  }
-  @media #{$gl-xs} {
-    .scrollmagic-pin-spacer {
-      width: 16.25vw!important;
-      height: 100%!important;
     }
   }
   
@@ -55,7 +50,7 @@
     }
     
     @media #{$gl-xs} {
-      width: calc(100vh - #{$header-height-pt});
+      width: 137.5vw;
       height: 16.25vw;
     }
   }

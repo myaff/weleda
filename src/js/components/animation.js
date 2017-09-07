@@ -5,6 +5,8 @@
 
 let scrollAnimationBlocks = $('.section');
 let stickyBlocks = $('.sticky');
+let stickyBlock = $('.sticky');
+var stickyController = new ScrollMagic.Controller();
  
 function addClassTogglerScene (el, controller) {
   new ScrollMagic.Scene({
@@ -26,38 +28,38 @@ function addClassTogglerController (animationBlocks) {
 }
 
 
-function addStickyScene (el, controller) {
-  //setTimeout(console.dir($(el).closest('.sticky-wrapper')[0]), 2000);
-  setTimeout(function (el, controller) {
-    let headerHeight = $('.header').height();
-    let durationHeight = $(el).closest('.sticky-wrapper')[0].offsetHeight - $(window).height() + headerHeight;
-    let offsetHeight = -1 * headerHeight;
-    new ScrollMagic.Scene({
-      triggerElement: el,
+function addStickyScene () {
+    let offsetHeight = -1 * $('.header').height();
+    let durationHeight = $('.sticky-wrapper').outerHeight() - $(window).height() - offsetHeight;
+    console.log(durationHeight);
+    return new ScrollMagic.Scene({
+      triggerElement: '#sticky',
       triggerHook: 0,
       offset: offsetHeight,
-      //duration: durationHeight
-      duration: 100%
+      duration: durationHeight
     })
-    .setPin(el)
-    .addTo(controller);
-  }, 500, el, controller);
-}
-
-function addStickyController (stickyBlocks) {
-  let controller = new ScrollMagic.Controller();
-  stickyBlocks.each(function(){
-    addStickyScene(this, controller);
-  });
+    .setPin('#sticky')
+    //.addIndicators()
+    .addTo(stickyController);
 }
 
 function init () {
   if (scrollAnimationBlocks.length > 0 && $(window).width() > 1024){
     addClassTogglerController(scrollAnimationBlocks);
   }
-  if (stickyBlocks.length > 0 && Main.DeviceDetection.isMobile()){
-    addStickyController(stickyBlocks);
-  }
+  /*if (Main.DeviceDetection.isMobile()){
+    var stickyScene = addStickyScene();
+    let resizeTimeout = null;
+    $(window).on('resize', function () {
+        if (resizeTimeout) {
+          clearTimeout(resizeTimeout);
+        }
+        resizeTimeout = setTimeout(function() {
+          stickyScene.destroy(true);
+          addStickyScene();
+        }, 500);
+    });
+  }*/
 }
 
 module.exports = {init};
